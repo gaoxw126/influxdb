@@ -5,6 +5,7 @@
 * Config option `[cluster]` has been replaced with `[coordinator]`
 * Support for config options `[collectd]` and `[opentsdb]` has been removed; use `[[collectd]]` and `[[opentsdb]]` instead.
 * Config option `data-logging-enabled` within the `[data]` section, has been renamed to `trace-logging-enabled`, and defaults to `false`.
+* `max-series-per-database` was added with a default of 1M but can be disabled by setting it to `0`.
 
 With this release the systemd configuration files for InfluxDB will use the system configured default for logging and will no longer write files to `/var/log/influxdb` by default. On most systems, the logs will be directed to the systemd journal and can be accessed by `journalctl -u influxdb.service`. Consult the systemd journald documentation for configuring journald.
 
@@ -44,6 +45,7 @@ With this release the systemd configuration files for InfluxDB will use the syst
 - [#7011](https://github.com/influxdata/influxdb/issues/7011): Create man pages for commands.
 - [#7050](https://github.com/influxdata/influxdb/pull/7050): Update go package library dependencies.
 - [#5750](https://github.com/influxdata/influxdb/issues/5750): Support wildcards in aggregate functions.
+- [#7095](https://github.com/influxdata/influxdb/pull/7095): Add MaxSeriesPerDatabase config setting.
 
 ### Bugfixes
 
